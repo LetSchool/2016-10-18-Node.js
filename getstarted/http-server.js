@@ -7,6 +7,6 @@ var server = http.createServer(function (req, res) {
 });
 
 // Listen on 3000 port
-server.listen(3000, function() {
+server.listen(process.env.PORT, function() {
 	console.log('Server running at http://localhost/');
 });
