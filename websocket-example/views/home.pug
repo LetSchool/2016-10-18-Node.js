@@ -1,0 +1,22 @@
+html
+	head
+		title Guestbook
+		link(ref='stylesheet', type='text/css', href='/css/theme.css')
+		script.
+			var wsUrl = 'wss://node-js-traning-cfsghost.c9users.io/';
+			var websocket = new WebSocket(wsUrl);
+			
+			websocket.onopen = function(evt) {
+				console.log('Connected');
+			};
+			websocket.onclose = function(evt) {
+				console.log('DisConnected');
+			};
+			websocket.onmessage = function(evt) {
+				console.log('Got Message', evt);
+			};
+			websocket.onerror = function(evt) {
+				console.log('Something\'s wrong');
+			};
+	body
+		h2 WebSocket
