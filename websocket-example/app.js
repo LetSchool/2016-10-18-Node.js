@@ -10,9 +10,15 @@ var socket = websockify(app);
 
 var wsRouter = new Router();
 wsRouter.get('/', function *() {
+	console.log('Connected');
+
 	this.websocket.send('Welcome');
 	this.websocket.on('message', function(msg) {
 		console.log(msg);
+	});
+
+	this.websocket.on('close', function() {
+		console.log('Disconnected');
 	});
 });
 
