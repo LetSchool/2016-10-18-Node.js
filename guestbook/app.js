@@ -2,6 +2,7 @@ var koa = require('koa');
 var bodyParser = require('koa-bodyparser');
 var Router = require('koa-router');
 var views = require('koa-views');
+var serve = require('koa-static');
 var app = koa();
 
 var msgs = [
@@ -36,6 +37,7 @@ router.post('/post', function *() {
 	this.redirect('/');
 }); 
 
+app.use(serve('./public'));
 app.use(bodyParser());
 app.use(views(__dirname + '/views', {
 	extension: 'pug',
