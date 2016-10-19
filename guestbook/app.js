@@ -33,7 +33,7 @@ router.post('/post', function *() {
 
 	msgs.push(newMsg);
 
-	this.body = 'DONE';
+	this.redirect('/');
 }); 
 
 app.use(bodyParser());
