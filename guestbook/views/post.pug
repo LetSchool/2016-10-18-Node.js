@@ -1,0 +1,15 @@
+html
+	head
+		title Guestbook
+	body
+		h2 Guestbook
+
+		form(action='/post', method='post')
+			div NAME
+			div
+				input(type='text', name='name')
+			div MESSAGE
+			div
+				textarea(name='msg')
+
+			input(type='submit')

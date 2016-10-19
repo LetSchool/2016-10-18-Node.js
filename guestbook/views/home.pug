@@ -1,0 +1,9 @@
+html
+	head
+		title Guestbook
+	body
+		h2 Guestbook
+
+		- for (var index in msgs)
+			div #{msgs[index].name}
+			div #{msgs[index].msg}
