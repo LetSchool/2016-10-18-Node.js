@@ -20,7 +20,6 @@ wsRouter.get('/', function *() {
 		self.websocket.send(msg);
 	};
 
-	this.websocket.send('Welcome');
 	this.websocket.on('message', function(msg) {
 		console.log(msg);
 		eventEmitter.emit('new', msg);
